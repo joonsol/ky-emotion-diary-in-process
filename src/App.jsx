@@ -84,24 +84,7 @@ function App() {
   }
   return (
     <div>
-      <Header
-        leftChild={<Button text="left" />}
-        title="header title"
-        rightChild={<Button text="right" />}
-      />
 
-      <button onClick={() =>
-        onCreate(new Date().getTime(), 1, "hello")}>
-        일기 추가하기
-      </button>
-      <button onClick={() =>
-        onUpdate(1,new Date().getTime(), 3, "수정된 내용")}>
-        일기 수정하기
-      </button>
-      <button onClick={() =>
-        onDelete(1)}>
-        일기 삭제하기
-      </button>
 
       <Routes>
         <Route path='/' element={<Home />} />
