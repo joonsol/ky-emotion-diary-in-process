@@ -2,7 +2,7 @@ import React from 'react'
 import "./DiaryList.css"
 import DiaryItem from './DiaryItem'
 import Button from './Button'
-const DiaryList = () => {
+const DiaryList = ({ data }) => {
   return (
     <div className='DiaryList'>
       <div className="menu-bar">
@@ -10,11 +10,13 @@ const DiaryList = () => {
           <option value={"latest"}>최신순</option>
           <option value={"oldest"}>오래된순</option>
         </select>
-        <Button text={"새 일기 쓰기"} type={"POSITIVE"}/>
+        <Button text={"새 일기 쓰기"} type={"POSITIVE"} />
       </div>
       <div className="list-wrapper">
+        {data.map((item) => (
 
-        <DiaryItem/>
+          <DiaryItem key={item.id} {...item}/>
+        ))}
 
       </div>
     </div>
