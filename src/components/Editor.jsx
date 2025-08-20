@@ -41,11 +41,11 @@ const Editor = ({ onSubmit }) => {
         <div className='Editor'>
             <section className="date-section">
                 <h4>오늘의 날짜</h4>
-                <input 
-                name='createdDate'
-                onChange={onChangeInput}
-                type="date"
-                 />
+                <input
+                    name='createdDate'
+                    onChange={onChangeInput}
+                    type="date"
+                />
             </section>
             <section className="emotion-section">
                 {emotionList.map((item) => (
@@ -53,11 +53,11 @@ const Editor = ({ onSubmit }) => {
                         key={item.emotionId}
                         {...item}
                         isSelected={item.emotionId == input.emotionId}
-                        onClick={()=>
+                        onClick={() =>
                             onChangeInput({
-                                target:{
-                                    name:'emotionId',
-                                    value:item.emotionId
+                                target: {
+                                    name: 'emotionId',
+                                    value: item.emotionId
                                 }
                             })
                         }
@@ -69,13 +69,19 @@ const Editor = ({ onSubmit }) => {
             </section>
             <section className="content-section">
                 <h4>오늘의 일기</h4>
-                <textarea placeholder='오늘은 어땠나요?'></textarea>
+                <textarea
+                    name="content"
+                    value={input.content}
+                    onChange={onChangeInput}
+                    placeholder='오늘은 어땠나요?'>
+
+                </textarea>
             </section>
             <section className="button-section">
-                <Button text={"취소하기"} onClick={()=>nav(-1)}/>
-                <Button text={"작성완료"} 
-                onClick={onSubmitButtonClick}
-                type={'POSITIVE'} />
+                <Button text={"취소하기"} onClick={() => nav(-1)} />
+                <Button text={"작성완료"}
+                    onClick={onSubmitButtonClick}
+                    type={'POSITIVE'} />
             </section>
         </div>
     )
