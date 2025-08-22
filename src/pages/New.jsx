@@ -5,10 +5,11 @@ import Button from '../components/Button'
 import {useContext, useState} from 'react'
 import {DiaryDispatchContext} from '../App'
 import { useNavigate } from 'react-router-dom'
+import useTitle from '../hook/useTitle'
 const New = () => {
   const nav =useNavigate()
   const {onCreate}=useContext(DiaryDispatchContext)
-
+useTitle("새 일기 쓰기")
   const onSubmit =(input)=>{
     onCreate(
       input.createdDate.getTime(),

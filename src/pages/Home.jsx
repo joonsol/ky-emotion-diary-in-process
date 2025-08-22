@@ -3,10 +3,12 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import DiaryList from '../components/DiaryList'
 import { DiaryStateContext } from '../App'
+import useTitle from '../hook/useTitle'
 const Home = () => {
 
   const data = useContext(DiaryStateContext)
 
+  useTitle("감정 일기장 홈")
 
   const [pivotDate, setPivotDate] = useState(new Date())
 
