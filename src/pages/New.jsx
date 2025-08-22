@@ -23,7 +23,7 @@ useTitle("새 일기 쓰기")
     <div>
       <Header 
       title={"새 일기 쓰기"}
-      leftChild={<Button text={"< 뒤로가기"}/>}
+      leftChild={<Button onClick={()=>nav(-1)} text={"< 뒤로가기"}/>}
       />
       <Editor onSubmit={onSubmit}/>
     </div>

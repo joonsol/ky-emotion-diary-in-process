@@ -10,7 +10,8 @@ import useTitle from '../hook/useTitle'
 const Edit = () => {
   const params = useParams()
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext)
-  const curDiaryItem = useDiary(params.id)
+  const curDiaryItem = useDiary(params.id,{redirectOnMissing:false})
+  const nav =useNavigate()
   useTitle(`${params.id}번의 다이어리 수정하기`)
   const onSubmit = (input) => {
     if (window.confirm('일기를 정말 수정할까요?')) {
